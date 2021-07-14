@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creativty.com</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<body>
+    <div id="header">
+        <p>GeniusBook.com</p>
+
+
+    </div>
+    {% if messages %}
+    <ul class="messages">
+            {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+    <div id="loginreg">
+        <div class="reg">
+            <form action="/registration" method="POST">
+                {% csrf_token %}
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name"><br>
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name"><br>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email"><br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password"><br>
+                <label for="confpass">Confirm Password</label>
+                <input type="password" name="confpass" id="confpass"><br>
+                <button>Register</button>
+            </form>
+        </div>
+        <div class="login">
+            <form action="/login" method="POST">
+                {% csrf_token %}
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email"><br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password"><br>
+                <button>Login</button>
+            </form>
+
+        </div>
+    </div>
+    <div id="desc">
+        <p>GeniusBook is a place you can find like-minded individuals 
+            and share ideas through brainstorming.<br> Have a billion dollar idea? share it and see how it compare to other ideas across the globe.</p>
+    </div>
+</body>
+
+</html>

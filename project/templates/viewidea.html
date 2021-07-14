@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Idea</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<body>
+    <div id="header">
+        <p>GeniusBook.com</p>
+
+
+    </div>
+    <div id="links">
+        <a href="/ideas">Go back</a>
+
+        <a href="/logout">Logout</a>
+    </div>
+
+    <div id="ideas">
+        <h1>{{idea.name}}</h1>
+        <p>Posted By:</p>{{idea.uploaded_by.first_name}}
+        {% if idea.uploaded_by.id != request.session.userid %}
+        <a href="{{idea.id}}/like">Like</a>
+        {% else %}
+
+
+
+
+        <a href="{{idea.id}}/remove">Remove</a>
+        <a href="{{idea.id}}/editpage">Edit</a>
+        <p>Description:</p>
+        <div id="ideainfo"> {{idea.description}}</div>
+        {% endif %}
+
+    </div>
+    <div id="ideainstr">
+        <h4>You can edit your idea above in order to perfect it and get it right.</h4>
+    </div>
+
+</body>
+
+</html>

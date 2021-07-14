@@ -1,0 +1,97 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#loginreg{
+    width: 550px;
+    height: 350px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 60px;
+    margin-left: 355px;
+    background-color: rgb(197, 248, 121);
+    border-radius: 20px;
+}
+#loginreg, input{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+button{
+    width: 90px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 7px;
+    margin-left: 25px;
+    background-color:rgb(169, 204, 228);
+}
+#desc{
+    font-size: 20px;
+    margin-left:225px ;
+}
+
+
+#header{
+    width: auto;
+    height: 100px;
+    background-color:rgb(105, 169, 209);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    margin: auto;
+}
+table, th, td{
+    width:1000px;
+    border: 1px solid rgb(65, 64, 64);
+    background-color:rgb(105, 169, 209);
+    border-radius: 5px;
+    margin-left: 160px;
+    color: rgb(255, 255, 255);
+
+}
+
+#ideas{
+    background-color:rgb(197, 248, 121) ;
+    height: 430px; ;
+    width: 600px;
+    border-radius: 7px;
+    margin-left: 60px;
+    font-size: 25px;
+    padding-left: 20px;
+}
+body{
+    background-color: white;
+}
+#userfirstname{
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+#userfirstname a{
+    font-size: 22px;
+    margin-right: 20px;
+    text-decoration: none;
+    font-style: inherit;
+
+}
+a{
+    text-decoration: none;
+}
+#ideainfo{
+    font-size: 17px;
+
+}
+#ideainstr{
+    font-style: italic;
+    margin-left: 140px;
+}
+#links{
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+}

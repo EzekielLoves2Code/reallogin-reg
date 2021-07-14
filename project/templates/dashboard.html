@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Dashboard</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+</head>
+
+<body>
+    <div id="header">
+        <p>GeniusBook.com</p>
+
+
+    </div>
+    <div id="userfirstname">
+        <h1>Welcome back {{user.first_name}}</h1>
+
+        <a href='/logout'>Log Out</a>
+
+    </div>
+
+
+    <a href="createpage">Add a new Idea</a>
+
+
+    {%for idea in all_ideas%}
+    <table>
+        <tr>
+
+            <th>Idea</th>
+            <th>Creator</th>
+            <th>Date Brainstormed</th>
+            <th>Likes</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <td>{{idea.name}}</td>
+            <td>{{idea.uploaded_by.last_name}}, {{idea.uploaded_by.first_name}}</td>
+            <td>{{idea.created_at}}</td>
+            <td><a href="{{idea.id}}/like">Like</a> {{idea.user_likes.count}}</td>
+            <td><a href="/{{idea.id}}">show</a></td>
+
+
+
+
+
+        </tr>
+    </table>
+
+
+
+    {%endfor%}
+
+</body>
+
+</html>
